@@ -1,0 +1,24 @@
+.cards-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+  padding: 20px;
+}
+
+mat-card {
+  overflow-x: auto;
+}
+
+@media screen and (max-device-width: 480px) and (orientation: portrait){
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+
+@media screen and (max-device-width: 640px) and (orientation: landscape){
+  .cards-container {
+    grid-template-columns: 1fr;
+  }
+}

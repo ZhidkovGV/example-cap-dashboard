@@ -1,0 +1,23 @@
+<h2>
+  Shreholder Info
+</h2>
+<mat-dialog-content *ngIf="form">
+  <form [formGroup]="form" class="shareholder-form">
+    <mat-form-field>
+      <input matInput formControlName="name">
+      <mat-label>Shareholder Name</mat-label>
+    </mat-form-field>
+    <mat-form-field *ngFor="let control of typeControls">
+      <input matInput [formControlName]="control">
+      <mat-label>{{control | titlecase}}</mat-label>
+      <mat-error *ngIf="form.get(control).hasError('max')">
+        Can't assign more shares then company have left
+      </mat-error>
+    </mat-form-field>
+
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close cdkFocusInitial>Cancel</button>
+  <button mat-button (click)="saveShareholder()" color="primary" [disabled]="form?.invalid">Save</button>
+</mat-dialog-actions>

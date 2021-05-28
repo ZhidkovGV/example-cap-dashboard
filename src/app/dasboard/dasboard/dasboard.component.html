@@ -1,0 +1,14 @@
+<app-header *ngIf="company$ | async as company" [companyName]="company.name"
+  (newShareholser)="onNewShareholder(company)" (splitShares)="onSplitShares(company)">
+</app-header>
+<div class="cards-container">
+  <mat-card>
+    <app-shareholders-table *ngIf="company$ | async as company" [shareholders]="shareholdersData$ | async"
+    [tableMetadata]="companySharesData$ | async" (deleteShareholder)="onDeleteShareholder($event)"
+    (editShareholder)="onEditShareholder($event, company)">
+  </app-shareholders-table>
+  </mat-card>
+  <mat-card *ngIf="company$ | async as company">
+    <app-overview-card [company]="company"></app-overview-card>
+  </mat-card>
+</div>

@@ -1,0 +1,26 @@
+<header class="company-header">
+  <div class="company-info">
+    <h1>{{companyName}}</h1>
+  </div>
+  <div class="company-actions-container">
+    <button mat-flat-button color="primary" (click)="onNewShareholderClick()">
+      Add Shareholder
+    </button>
+    <button mat-flat-button color="primary" (click)="onSplitClick()">
+      Make Split
+    </button>
+  </div>
+  <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Company actions" class="mobile-company-actions">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="onNewShareholderClick()">
+      <mat-icon>face</mat-icon>
+      <span>Add Shareholder</span>
+    </button>
+    <button mat-menu-item (click)="onSplitClick()">
+      <mat-icon>sync_alt</mat-icon>
+      <span>Make Split</span>
+    </button>
+  </mat-menu>
+</header>

@@ -12,19 +12,22 @@
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
+    "resolveJsonModule": true,
     "moduleResolution": "node",
+    "strictPropertyInitialization": false,
     "importHelpers": true,
     "target": "es2017",
     "module": "es2020",
     "lib": [
-      "es2018",
+      "es2019",
       "dom"
     ]
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
-    "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictInputAccessModifiers": false,
+    "strictTemplates": false,
+    "fullTemplateTypeCheck": false
   }
 }

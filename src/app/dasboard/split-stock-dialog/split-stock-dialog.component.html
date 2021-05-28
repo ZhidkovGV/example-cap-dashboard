@@ -1,0 +1,25 @@
+<h2>Split Shares</h2>
+<mat-dialog-content>
+  <form [formGroup]="form" class="split-form">
+    <mat-form-field>
+      <mat-label>Shares Type</mat-label>
+      <mat-select formControlName="type">
+        <mat-option *ngFor="let type of shareTypes" [value]="type">
+          {{type | titlecase}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>From</mat-label>
+      <input matInput formControlName="from">
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>To</mat-label>
+      <input matInput formControlName="to">
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close cdkFocusInitial>Cancel</button>
+  <button mat-button (click)="makeSplit()" color="primary">Split</button>
+</mat-dialog-actions>

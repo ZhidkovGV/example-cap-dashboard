@@ -1,0 +1,10 @@
+<mat-card-header>
+  <mat-card-title>Overview</mat-card-title>
+  <mat-card-subtitle *ngIf="shareTypes" class="sub-header">
+    <span *ngFor="let shareType of shareTypes">{{shareType.sharesAmount}} {{shareType.type | titlecase}} shares with price
+      {{shareType.cost}}$</span>
+  </mat-card-subtitle>
+</mat-card-header>
+<mat-card-content>
+  <div [chart]="chart"></div>
+</mat-card-content>

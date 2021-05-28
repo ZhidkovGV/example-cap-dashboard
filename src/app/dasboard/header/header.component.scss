@@ -1,0 +1,40 @@
+.company-header {
+  background-color: #fff;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  width: calc(100vw - 40px);
+
+  h1 {
+    padding: 0;
+    margin: 0;
+  }
+}
+
+.mobile-company-actions {
+  display: none;
+}
+
+.company-actions-container {
+  display: flex;
+  gap: 20px;
+}
+
+@media screen and (max-device-width: 480px) and (orientation: portrait) {
+  .company-actions-container {
+    display: none;
+  }
+  .mobile-company-actions {
+    display: block;
+  }
+}
+
+@media screen and (max-device-width: 640px) and (orientation: landscape) {
+  .company-actions-container {
+    display: none;
+  }
+  .mobile-company-actions {
+    display: block;
+  }
+}
